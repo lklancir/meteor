@@ -1,0 +1,48 @@
+<head>
+  <title>rolesauth</title>
+</head>
+
+<body>
+{{>navigation}}
+  <div class="container">
+    <h1>Welcome to Meteor!</h1>
+
+  </div>
+
+</body>
+
+<template name="index">
+  {{>loginButtons}}
+  {{#if isInRole 'admin'}}
+  <div class="col-md-4">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Super Secret Section</h3>
+      </div>
+      <div class="panel-body">
+        <p>
+          For Admins Only
+        </p>
+      </div>
+      <div class="panel-footer">
+
+      </div>
+    </div>
+  </div>
+  {{/if}}
+  {{#if isInRole 'view-projects'}}
+  <div class="col-md-4">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Everyone can see this.</h3>
+      </div>
+      <div class="panel-body">
+        Its not secure
+      </div>
+      <div class="panel-footer">
+
+      </div>
+    </div>
+  </div>
+  {{/if}}
+</template>
