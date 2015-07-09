@@ -1,15 +1,24 @@
 <head>
-  <title>rolesauth</title>
+  <title>Sezonci</title>
 </head>
 
 <body>
 {{>navigation}}
   <div class="container">
-    <h1>Welcome to Meteor!</h1>
+
+    <!-- kontrola izbornika za različite sesije
+        ili je sesija prazna i daj public stvari
+        ili je poslodavac ili radnik
+    -->
+    {{>index}}
 
   </div>
 
 </body>
+
+
+
+
 
 <template name="index">
   {{#if isInRole 'admin'}}

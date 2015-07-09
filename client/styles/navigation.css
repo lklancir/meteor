@@ -1,0 +1,22 @@
+//navigation css
+.get_employed {
+	border-width: 2px;
+	padding: 8px 38px;
+	color: #5bbc2e;
+}
+
+//search navigation
+.ns_text  {
+	padding-left: 5px;
+}
+.ns_selected {
+	text-decoration: none;
+  color: #141414;
+  background-color: #eeeeee;
+}
+.ns_submit {
+  padding: 6px 8px;
+}
+.ns_button {
+  padding: 6px 10px;
+}

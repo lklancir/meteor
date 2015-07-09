@@ -1,0 +1,77 @@
+<template name="navigation">
+
+  <!-- TU TREBA čekirati dal je session up and running i puknuti drugačiju navigaciju?
+      tj. orijentirati se prema session, kad nije logiran ima to, kad je logiran nekaj drugi etc...
+  -->
+
+
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+
+      <div class="navbar-header nav-">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">Sezonci</a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="navbar">
+
+        <!-- controlled by navigation.js "change navigation_search event!" -->
+        <form class="navbar-form navbar-left ns_submit_form" role="search">
+          <div class="input-group">
+            <div class="input-group-btn">
+              <button type="button" class="btn btn-default dropdown-toggle ns_button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-search"></span><span class="caret"></span></button>
+              <ul class="dropdown-menu">
+                <li class="navigation_search ns_selected" code="employer"> <a href="#"> Poslodavci </a> </li>
+                <li class="navigation_search"             code="employee"> <a href="#"> Posloprimci </a> </li>
+              </ul>
+            </div><!-- /btn-group -->
+              <input type="text" class="form-control ns_text" aria-label="..." placeholder="Traži poslodavce">
+          </div><!-- /input-group -->
+          <button type="submit" class="btn btn-default ns_submit_button">TRAŽI</button>
+        </form>
+        <!-- controlled by navigation.js "change navigation_search event!" -->
+
+
+
+        <!-- open/non logged session menu -->
+        <ul class="nav navbar-nav">
+
+          <!-- kontrola izbornika za različite sesije
+              ili je sesija prazna i daj public stvari
+              ili je poslodavac ili radnik
+          -->
+          {{#if isInRole 'unknown'}}
+
+          {{/if}}
+          {{#if isInRole 'employer'}}
+
+          {{/if}}
+          {{#if isInRole 'employee'}}
+
+          {{/if}}
+          {{#if isInRole 'admin'}}
+
+          {{/if}}
+
+          <li><a href="{{pathFor route='employer'}}">Poslodavci</a></li>
+          <li><a href="{{pathFor route='employee'}}">Posloprimci</a></li>
+          <li><a href="{{pathFor route='howItWorks'}}">Kako radi</a></li>
+
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#"></a>{{>loginButtons}}</li>
+          <li><a href="#" class="btn btn-default">Zaposli se!</a></li>
+        </ul>
+
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
+</template>

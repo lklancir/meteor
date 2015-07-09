@@ -1,7 +1,7 @@
 if (Meteor.isClient) {
   // This code only runs on the client
   // (client-side)
-Template.Homepage.created = function() {
+/*Template.Homepage.created = function() {
   if (Accounts._verifyEmailToken) {
     Accounts.verifyEmail(Accounts._verifyEmailToken, function(err) {
       if (err != null) {
@@ -13,7 +13,7 @@ Template.Homepage.created = function() {
       }
     });
   }
-};
+}; */
 
 
 }
