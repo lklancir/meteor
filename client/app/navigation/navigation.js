@@ -1,5 +1,5 @@
 if (Meteor.isClient) {
-  Template.navigation.events({
+  Template.mainNav.events({
     "click .navigation_search": function (event) {
       // This function is called when navigation search is changed (quicksearch)
       // classes used: .navigation_search, .ns_selected, .ns_text

@@ -3,14 +3,13 @@
 </head>
 
 <body>
-{{>navigation}}
+
   <div class="container">
 
     <!-- kontrola izbornika za različite sesije
         ili je sesija prazna i daj public stvari
         ili je poslodavac ili radnik
     -->
-    {{>index}}
 
   </div>
 
@@ -20,23 +19,19 @@
 
 
 
-<template name="index">
-  {{#if isInRole 'admin'}}
-  <div class="col-md-4">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h3 class="panel-title">Super Secret Section</h3>
-      </div>
-      <div class="panel-body">
-        <p>
-          For Admins Only
-        </p>
-      </div>
-      <div class="panel-footer">
+<template name="home">
+  {{#if isInRole 'employer'}}
+  <p>samo test</p>
 
-      </div>
-    </div>
-  </div>
+      {{#each jobListings}}
+      <ul>
+      <li>{{jobTitle}}</li>
+      <li>{{jobDescription}}</li>
+      <li>{{jobCategory}}</li>
+      <li>{{jobLocation}}</li>
+      </ul>
+      
+      {{/each}}
   {{/if}}
   {{#if isInRole 'view-projects'}}
   <div class="col-md-4">
@@ -53,4 +48,8 @@
     </div>
   </div>
   {{/if}}
+</template>
+
+<template name="job">
+
 </template>

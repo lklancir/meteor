@@ -9,10 +9,10 @@ Meteor.startup(function () {
   process.env.MAIL_URL = 'smtp://' + encodeURIComponent(smtp.username) + ':' + encodeURIComponent(smtp.password) + '@' + encodeURIComponent(smtp.server) + ':' + smtp.port;
 
   // By default, the email is sent from no-reply@meteor.com. If you wish to receive email from users asking for help with their account, be sure to set this to an email address that you can receive email at.
-  Accounts.emailTemplates.from = 'Gentlenode <no-reply@gentlenode.com>';
+  Accounts.emailTemplates.from = 'Sezonci.hr <no-reply@sezonci.hr>';
 
   // The public name of your application. Defaults to the DNS name of the application (eg: awesome.meteor.com).
-  Accounts.emailTemplates.siteName = 'Gentlenode Studio';
+  Accounts.emailTemplates.siteName = 'Sezonci - sezonski poslovi';
 
   // A Function that takes a user object and returns a String for the subject line of the email.
   Accounts.emailTemplates.verifyEmail.subject = function(user) {
@@ -25,6 +25,6 @@ Meteor.startup(function () {
     return 'click on the following link to verify your email address: ' + url;
   };
 
-  
+
 
 });
