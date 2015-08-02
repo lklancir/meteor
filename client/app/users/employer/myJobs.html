@@ -1,3 +1,24 @@
 <template name="myJobs">
   <h1>MOJI POSLOVI</h1>
+
+  {{#if isInRole 'employer'}}
+  <p>samo test</p>
+
+      {{#each listMyJobs}}
+      <ul>
+      <li>{{jobTitle}}</li>
+      <li>{{jobDescription}}</li>
+      <li>{{jobCategory}}</li>
+      <li>{{jobLocation}}</li>
+      <li>Employer: {{employer}}</li>
+      <li>Applicants:</li>
+      <ul>
+        {{#each applicants}}
+        <li><a href="/employee/{{this}}">{{this}}</a></li>
+        {{/each}}
+      </ul>
+      </ul>
+
+      {{/each}}
+  {{/if}}
 </template>

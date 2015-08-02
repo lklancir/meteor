@@ -64,7 +64,12 @@
           </li>
 
           <li><a href="{{pathFor route='howItWorks'}}">Kako radi</a></li>
+          {{#if isInRole 'employer'}}
           <li><a href="{{pathFor route='employerProfile'}}">EMPLOYER LINK</a></li>
+          {{/if}}
+          {{#if isInRole 'employee'}}
+          <li><a href="{{pathFor route='employeeProfile'}}">EMPLOYEE LINK</a></li>
+          {{/if}}
 
         </ul>
 

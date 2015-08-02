@@ -1,3 +1,8 @@
-<template name="employee">
+<template name="employeeProfile">
   <h1> employeeeeee</h1>
+  <h2>{{_id}}</h2>
+  <h2>{{profile.name}} {{profile.surname}}</h2>
+  {{#with profile}}
+        Profile name : {{name}}
+  {{/with}}
 </template>

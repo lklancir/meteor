@@ -1,0 +1,25 @@
+<template name="jobs">
+<h1>SVI POSLOVI</h1>
+
+{{#each jobListings}}
+<ul>
+<li>{{jobTitle}}</li>
+<li><a href="/jobs/{{jobTitle}}">{{_id}}</a></li>
+<li>{{jobDescription}}</li>
+<li>{{jobCategory}}</li>
+<li>{{jobLocation}}</li>
+<li>Employer: {{employer}}</li>
+<li>Applicants:</li>
+<ul>
+  {{#each applicants}}
+  <li><a href="/employee/{{this}}">{{this}}</a></li>
+  {{/each}}
+</ul>
+<input type="button" name="jobApply" class="jobApply" value="Prijavi">
+<input type="button" name="jobCancelApply" class="jobCancelApply" value="Odjavi">
+</ul>
+
+{{/each}}
+
+
+</template>

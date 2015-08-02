@@ -7,9 +7,25 @@ Meteor.methods({
       owner: Meteor.userId(),
     });
   },
-  getEmployer: function(currentuser){
-    return Employer.find({"user":currentuser}).fetch();
 
+  userAccessDeniedEmployer : function(user){
+    if(!user || !Roles.userIsInRole(user, ['employer'])) {
+      return true;
+    }
+    else{
+      return false;
+    }
+  },
+  userAccessDeniedEmployee : function(user){
+    if(!user || !Roles.userIsInRole(user, ['employee'])) {
+      return true;
+    }
+    else{
+      return false;
+    }
+  },
+  findEmployeeProfile:function(userId){
+      return Users.findOne({_id:"userId"});
   }
   // deleteTask: function (taskId) {
   //   var task = Tasks.findOne(taskId);

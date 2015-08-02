@@ -1,0 +1,14 @@
+<template name="jobsDetailed">
+<ul>
+  <li>{{jobTitle}}</li>
+  <li>{{jobDescription}}</li>
+  <li>{{jobCategory}}</li>
+  <li>{{jobLocation}}</li>
+  <li>Applicants:</li>
+  <ul>
+    {{#each applicants}}
+    <li><a href="/employee/{{this}}">{{this}}</a></li>
+    {{/each}}
+  </ul>
+</ul>
+</template>

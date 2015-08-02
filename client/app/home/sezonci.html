@@ -20,19 +20,7 @@
 
 
 <template name="home">
-  {{#if isInRole 'employer'}}
-  <p>samo test</p>
-
-      {{#each jobListings}}
-      <ul>
-      <li>{{jobTitle}}</li>
-      <li>{{jobDescription}}</li>
-      <li>{{jobCategory}}</li>
-      <li>{{jobLocation}}</li>
-      </ul>
-      
-      {{/each}}
-  {{/if}}
+  {{>jobs}}
   {{#if isInRole 'view-projects'}}
   <div class="col-md-4">
     <div class="panel panel-default">

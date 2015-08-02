@@ -1,32 +1,33 @@
-Meteor.publish("userProfile",function(employerId){
+Meteor.publish("userProfile",function(UID){
     // simulate network latency by sleeping 2s
-    Meteor._sleepForMs(2000);
+    //Meteor._sleepForMs(2000);
     // try to find the user by username
-    var employer=Meteor.employer.findOne({
-        _id:employerId
+    var user=Meteor.users.findOne({
+        _id:UID
     });
     // if we can't find it, mark the subscription as ready and quit
-    if(!employer){
+    if(!user){
         this.ready();
         return;
     }
     // if the user we want to display the profile is the currently logged in user...
-    if(this.employerId==employer._id){
+    if(UID==user._id){
         // then we return the corresponding full document via a cursor
-        return Meteor.employer.find(this.employerId);
+        return Meteor.users.find(UID);
     }
     else{
         // if we are viewing only the public part, strip the "profile"
         // property from the fetched document, you might want to
         // set only a nested property of the profile as private
         // instead of the whole property
-        return Meteor.users.find(Meteor.userId(),{
+        return Meteor.users.find(user._id,{
             fields:{
                 "profile":0
             }
         });
     }
 });
+
 
 
 Meteor.publish("jobs", function(){

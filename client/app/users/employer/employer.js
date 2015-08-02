@@ -1,12 +1,4 @@
 // Meteor.subscribe("profiles");
-
-Template.employerProfile.helpers({
-  getProfile: function(){
-     return Users.findOne({_id:this.userId});
-   }
-});
-
-
 Template.employerRegistration.events({
   'submit form': function(event){
       event.preventDefault();
@@ -41,6 +33,7 @@ Template.addJob.events({
     var jobLocation = $('[name=jobLocation]').val();
 
     var jobData = {
+      employer:Meteor.userId(),
       jobTitle:jobTitle,
       jobDescription:jobDescription,
       jobCategory:jobCategory,
@@ -51,12 +44,8 @@ Template.addJob.events({
   }
 });
 
-
-
-
-
-Template.name.events({
-  "click #foo": function(event, template){
-
+Template.myJobs.helpers({
+  listMyJobs: function(){
+     return Jobs.find({"employer":Meteor.userId()}).fetch();
   }
 });
