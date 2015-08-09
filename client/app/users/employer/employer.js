@@ -1,4 +1,3 @@
-// Meteor.subscribe("profiles");
 Template.employerRegistration.events({
   'submit form': function(event){
       event.preventDefault();
@@ -23,29 +22,47 @@ Template.employerRegistration.events({
   }
 });
 
+Template.addJob.onRendered(function(){
+
+    this.$('#my-datepicker').datepicker();
+    // this.$( "#number" )
+    //   .selectmenu()
+    //   .selectmenu( "menuWidget" )
+    //     .addClass( "overflow" );
+
+  });
+
 
 Template.addJob.events({
   "submit form": function(event){
     event.preventDefault();
     var jobTitle = $('[name=jobTitle]').val();
     var jobDescription = $('[name=jobDescription]').val();
+    var numberOfWorkers = $('[name=numberOfWorkers]').val();
+    var jobOpeningDate = $('[name=jobOpeningDate]').val();
+    var jobDeadline = $('[name=jobDeadline]').val();
     var jobCategory = $('[name=jobCategory]').val();
+    var jobState = $('[name=jobState]').val();
     var jobLocation = $('[name=jobLocation]').val();
 
     var jobData = {
       employer:Meteor.userId(),
       jobTitle:jobTitle,
       jobDescription:jobDescription,
+      numberOfWorkers:numberOfWorkers,
+      jobOpeningDate:jobOpeningDate,
+      jobDeadline:jobDeadline,
       jobCategory:jobCategory,
-      jobLocation:jobLocation
+      jobState:jobState,
+      jobLocation:jobLocation,
+      jobLocation:jobLocation,
+      jobStatus: {
+        active: true,
+        unactive: false,
+        expired: false
+      }
     };
 
     Meteor.call("addJob", jobData);
-  }
-});
-
-Template.myJobs.helpers({
-  listMyJobs: function(){
-     return Jobs.find({"employer":Meteor.userId()}).fetch();
   }
 });

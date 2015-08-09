@@ -1,24 +1,36 @@
 <template name="jobs">
-<h1>SVI POSLOVI</h1>
-
+<br><br><br><br>
 {{#each jobListings}}
-<ul>
-<li>{{jobTitle}}</li>
-<li><a href="/jobs/{{jobTitle}}">{{_id}}</a></li>
-<li>{{jobDescription}}</li>
-<li>{{jobCategory}}</li>
-<li>{{jobLocation}}</li>
-<li>Employer: {{employer}}</li>
-<li>Applicants:</li>
-<ul>
-  {{#each applicants}}
-  <li><a href="/employee/{{this}}">{{this}}</a></li>
-  {{/each}}
-</ul>
-<input type="button" name="jobApply" class="jobApply" value="Prijavi">
-<input type="button" name="jobCancelApply" class="jobCancelApply" value="Odjavi">
-</ul>
 
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+
+        </div>
+        <div class="col-lg-6  list-group light-gray">
+            <h5 class="section-heading"><a href="/jobs/{{jobTitle}}">{{jobTitle}}</a></h5>
+            <p><b>Lokacija: </b>{{jobLocation}} </p>
+            <p><b>Opis posla: </b>{{jobDescription}} </p>
+            <p><b>Rok prijave: {{jobDeadline}}</b></p>
+            <input type="button" name="jobApply" class="btn btn-primary text-capitalize jobApply" value="Prijavi">
+            <input type="button" name="jobCancelApply" class="btn btn-primary text-capitalize jobCancelApply" value="Odjavi">
+            <ul>
+
+            <!-- <li>{{jobCategory}}</li>
+            <li>{{jobLocation}}</li>
+            <li>Employer: {{employer}}</li> -->
+            <!-- <li>Applicants:</li>
+            <ul>
+              {{#each applicants}}
+              <li><a href="/employee/{{this}}">{{this}}</a></li>
+              {{/each}}
+            </ul> -->
+
+            </ul>
+            <hr>
+        </div>
+    </div>
+  </div>
 {{/each}}
 
 

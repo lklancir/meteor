@@ -1,14 +1,41 @@
 <template name="jobsDetailed">
-<ul>
-  <li>{{jobTitle}}</li>
-  <li>{{jobDescription}}</li>
-  <li>{{jobCategory}}</li>
-  <li>{{jobLocation}}</li>
-  <li>Applicants:</li>
-  <ul>
-    {{#each applicants}}
-    <li><a href="/employee/{{this}}">{{this}}</a></li>
-    {{/each}}
-  </ul>
-</ul>
+
+  <div class="container">
+      <div class="row">
+        <div class="col-lg-1">
+
+        </div>
+          <div class="col-lg-2">
+            <br>
+            <img src="../img/portfolio/waiter.jpg" class="img-responsive" alt="">
+            {{employer}}
+          </div>
+          <div class="col-lg-5  list-group light-gray">
+              <h5 class="section-heading"><a href="/jobs/{{jobTitle}}">{{jobTitle}}</a></h5>
+              <p><b>Lokacija: </b>{{jobLocation}} </p>
+              <p><b>Opis posla: </b>{{jobDescription}} </p>
+              <p><b>Rok prijave: {{jobDeadline}}</b></p>
+
+              <div id="accordion" class="">
+                  <h3>Prijavljeni ({{applicantsCount}})</h3>
+                  <div>
+                    {{#each applicants}}
+                    <li><a href="/employee/{{this}}">{{this}}</a></li>
+                    {{/each}}
+
+                  </div>
+              </div>
+
+          </div>
+          <div class="col-md-3 col-md-offset-1">
+              <input type="button" name="jobApply" class="btn btn-primary btn-lg text-capitalize jobApply" value="Prijavi">
+              <input type="button" name="jobCancelApply" class="btn btn-primary btn-lg text-capitalize jobCancelApply" value="Odjavi">
+              <br>
+              <br>
+              <input type="button" name="Favorit" class="btn btn-primary btn-lg text-capitalize form-control" value="Favorit">
+
+          </div>
+
+      </div>
+    </div>
 </template>

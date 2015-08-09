@@ -1,0 +1,26 @@
+<template name="activeJobs">
+  <h1>AKTIVNI OGLASI</h1>
+
+  {{#if isInRole 'employer'}}
+  {{#each listMyJobs}}
+  {{#if jobStatus.active}}
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-3">
+
+          </div>
+          <div class="col-lg-6  list-group light-gray">
+              <h5 class="section-heading"><a href="/jobs/{{jobTitle}}">{{jobTitle}}</a></h5>
+              <p><b>Lokacija: </b>{{jobLocation}} </p>
+              <p><b>Opis posla: </b>{{jobDescription}} </p>
+              <p><b>Rok prijave: {{jobDeadline}}</b></p>
+              <input type="button" name="jobUpdate" class="btn btn-primary text-capitalize" value="Obnovi">
+              <input type="button" name="jobDeactivate" id="jobDeactivate" class="btn btn-primary text-capitalize" value="Deaktiviraj">
+              <hr>
+          </div>
+      </div>
+    </div>
+  {{/if}}
+  {{/each}}
+  {{/if}}
+</template>

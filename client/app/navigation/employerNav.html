@@ -1,5 +1,5 @@
 <template name="employerNav">
-  <nav class="navbar navbar-default" role="navigation">
+  <nav class="navbar navbar-default navbar-employer" role="navigation">
     <div class="container-fluid">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
@@ -13,10 +13,10 @@
 
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="navbar">
-        <ul class="nav navbar-nav">
+        <ul class="nav navbar-nav navbar-employer">
           <li class="active"><a href="{{pathFor 'employerProfile'}}">PROFIL</a></li>
           <li><a href="{{pathFor 'addJob'}}">DODAJ POSAO</a></li>
-          <li><a href="{{pathFor 'myJobs'}}">MOJI POSLOVI</a></li>
+          <li><a href="{{pathFor 'activeJobs'}}">MOJI POSLOVI</a></li>
 
         </ul>
 
