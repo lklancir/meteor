@@ -1,6 +1,12 @@
 <template name="main">
-  {{>mainNav}}
-  {{>yield}}
-  <hr />
-  <p>Copyright &copy; Siginum, 2014-2015.</p>
+
+    <!-- Main navigation - all logic handled in there -->
+    {{>mainNav}}
+
+    <!-- Main page content! -->
+    {{>yield}}
+
+    <!-- footer -->
+    {{>footer}}
+
 </template>

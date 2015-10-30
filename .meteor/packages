@@ -12,9 +12,9 @@ mrt:bootstrap-3
 iron:router
 email
 accounts-base
-accounts-ui-unstyled
 matb33:collection-hooks
 houston:admin
 sacha:spin
 fortawesome:fontawesome
 mizzao:jquery-ui
+accounts-ui-unstyled

@@ -33,97 +33,19 @@
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scrol" href="{{pathFor 'signup'}}">Registriraj se</a>
+                        <a class="page-scroll" href="{{pathFor 'signup'}}">Registriraj se</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#">{{>loginButtons}}</a>
+                        <a class="page-scroll" href="javascript:void(0);">{{>loginButtons}}</a>
                     </li>
-                    <li>
-                        <a class="page-scroll" href="{{pathFor 'employeeRegistration'}}">Zaposli se</a>
-                    </li>
+                    <!--<li>-->
+                        <!--<a class="page-scroll" href="{{pathFor 'employeeRegistration'}}">Zaposli se</a>-->
+                    <!--</li>-->
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container-fluid -->
     </nav>
-
-
-
-  <!-- TU TREBA čekirati dal je session up and running i puknuti drugačiju navigaciju?
-      tj. orijentirati se prema session, kad nije logiran ima to, kad je logiran nekaj drugi etc...
-  -->
-
-
-  <!-- <nav class="navbar navbar-default" role="navigation">
-    <div class="container-fluid">
-
-      <div class="navbar-header nav-">
-        <a class="navbar-brand" href="/">Sezonci</a>
-      </div>
-
-
-      <div class="collapse navbar-collapse" id="navbar">
-
-
-        <form class="navbar-form navbar-left ns_submit_form" role="search">
-          <div class="input-group">
-            <div class="input-group-btn">
-              <button type="button" class="btn btn-default dropdown-toggle ns_button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-search"></span><span class="caret"></span></button>
-              <ul class="dropdown-menu">
-                <li class="navigation_search ns_selected" code="employer"> <a href="#"> Poslodavci </a> </li>
-                <li class="navigation_search"             code="employee"> <a href="#"> Posloprimci </a> </li>
-              </ul>
-            </div>
-              <input type="text" class="form-control ns_text" aria-label="..." placeholder="Traži poslodavce">
-          </div>
-          <button type="submit" class="btn btn-default ns_submit_button">TRAŽI</button>
-        </form>
-
-        <ul class="nav navbar-nav">
-
-
-          {{#if isInRole 'unknown'}}
-
-          {{/if}}
-          {{#if isInRole 'employer'}}
-
-          {{/if}}
-          {{#if isInRole 'employee'}}
-
-          {{/if}}
-          {{#if isInRole 'admin'}}
-
-          {{/if}}
-
-
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Vrste poslova <b class="caret"></b></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">TEST1</a></li>
-              <li><a href="#">TEST2</a></li>
-              <li class="divider"></li>
-            </ul>
-          </li>
-
-          <li><a href="{{pathFor route='howItWorks'}}">Kako radi</a></li>
-          {{#if isInRole 'employer'}}
-          <li><a href="{{pathFor route='employerProfile'}}">EMPLOYER LINK</a></li>
-          {{/if}}
-          {{#if isInRole 'employee'}}
-          <li><a href="{{pathFor route='employeeProfile'}}">EMPLOYEE LINK</a></li>
-          {{/if}}
-
-        </ul>
-
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="{{pathFor 'login'}}" class="btn btn-default">Login</a></li>
-          <li><a href="{{pathFor 'signup'}}" class="btn btn-default">Registracija</a></li>
-          <li><a href="{{pathFor 'employeeRegistration'}}" class="btn btn-default">Zaposli se!</a></li>
-        </ul>
-
-      </div>
-    </div>
-  </nav> -->
 
 </template>

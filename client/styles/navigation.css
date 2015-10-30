@@ -1,11 +1,11 @@
-//navigation css
+/* navigation css */
 .get_employed {
 	border-width: 2px;
 	padding: 8px 38px;
 	color: #5bbc2e;
 }
 
-//search navigation
+/* search navigation */
 .ns_text  {
 	padding-left: 5px;
 }
@@ -20,3 +20,66 @@
 .ns_button {
   padding: 6px 10px;
 }
+
+.nav-shrink {
+	background-color: black !important;
+	padding: 0px !important;
+}
+
+/* custom LOGIN css */
+div.accounts-dialog {
+	background-color: white;
+	border: 1px solid rgba(229, 103, 23, 0.8);
+	border-radius: 10px;
+	color: black;
+	position: absolute;
+	left: -250px;
+	width: 350px;
+	padding: 10px 10px 0;
+}
+div.accounts-dialog a.login-close-text {
+	display: none;
+}
+div.accounts-dialog div.login-form label {
+	width: 25%;
+	padding-right: 10px;
+	font-size: 90%;
+}
+div.accounts-dialog div.login-form input {
+	width: 70%;
+	font-size: 1em;
+}
+div.accounts-dialog div.login-form input:focus {
+	border-color: rgba(229, 103, 23, 0.8);
+	box-shadow: 0 1px 1px rgba(229, 103, 23, 0.075) inset, 0 0 8px rgba(229, 103, 23, 0.6);
+	outline: 0 none;
+}
+div.accounts-dialog div.login-button-form-submit {
+	position: relative;
+	margin: 5px auto 10px;
+	width: 50%;
+	cursor: pointer;
+	text-align: center;
+	border: 1px solid rgba(229, 103, 23, 0.8);
+	border-radius: 5px;
+	padding: 2%;
+
+	transition:box-shadow .3s linear;
+	-moz-transition:-moz-box-shadow .3s linear;
+	-webkit-transition:-webkit-box-shadow .3s linear;
+}
+div.accounts-dialog div.login-button-form-submit:focus,
+div.accounts-dialog div.login-button-form-submit:hover {
+	/*background-color: rgba(229, 103, 23, 0.6);*/
+	box-shadow: 0 1px 1px rgba(229, 103, 23, 0.075) inset, 0 0 8px rgba(229, 103, 23, 0.6);
+}
+div.additional-link-container a {
+	color: black !important;
+	cursor: pointer;
+	text-decoration: none;
+}
+div.additional-link-container a:focus,
+div.additional-link-container a:hover {
+	color: rgba(229, 103, 23, 0.8) !important;
+}
+/* /LOGIN form */
